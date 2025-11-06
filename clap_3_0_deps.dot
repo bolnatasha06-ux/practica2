@@ -1,0 +1,8 @@
+digraph Dependencies {
+    rankdir=TB;
+    node [shape=box, style=filled, fillcolor=lightblue];
+    edge [color=darkgreen];
+
+    "clap_3.0" [label="clap\n3.0", fillcolor=orange];
+
+}

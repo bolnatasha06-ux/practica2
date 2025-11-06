@@ -1,0 +1,8 @@
+digraph Dependencies {
+    rankdir=TB;
+    node [shape=box, style=filled, fillcolor=lightblue];
+    edge [color=darkgreen];
+
+    "natali_1.0.0" [label="natali\n1.0.0", fillcolor=orange];
+
+}
