@@ -1,0 +1,495 @@
+digraph dependencies {
+    rankdir=TB;
+    node [shape=box, style=filled, fillcolor=lightblue];
+    edge [color=darkgreen];
+    graph [bgcolor=white];
+
+    // Центральный узел - основной пакет
+    "reqwest_0.11.0" [
+        label="reqwest\n0.11.0",
+        fillcolor=lightcoral,
+        fontsize=16,
+        shape=ellipse
+    ];
+
+    // Зависимость: base64
+    "base64_0" [
+        label="base64\n^0.13",
+        fillcolor="lightgreen"
+    ];
+
+    // Связь: reqwest -> base64
+    "reqwest_0.11.0" -> "base64_0"
+        [label="normal"];
+
+    // Зависимость: brotli
+    "brotli_1" [
+        label="brotli\n^3.3.0",
+        fillcolor="lightyellow"
+    ];
+
+    // Связь: reqwest -> brotli
+    "reqwest_0.11.0" -> "brotli_1"
+        [label="dev"];
+
+    // Зависимость: bytes
+    "bytes_2" [
+        label="bytes\n^1.0",
+        fillcolor="lightgreen"
+    ];
+
+    // Связь: reqwest -> bytes
+    "reqwest_0.11.0" -> "bytes_2"
+        [label="normal"];
+
+    // Зависимость: doc-comment
+    "doc-comment_3" [
+        label="doc-comment\n^0.3",
+        fillcolor="lightyellow"
+    ];
+
+    // Связь: reqwest -> doc-comment
+    "reqwest_0.11.0" -> "doc-comment_3"
+        [label="dev"];
+
+    // Зависимость: encoding_rs
+    "encoding_rs_4" [
+        label="encoding_rs\n^0.8",
+        fillcolor="lightgreen"
+    ];
+
+    // Связь: reqwest -> encoding_rs
+    "reqwest_0.11.0" -> "encoding_rs_4"
+        [label="normal"];
+
+    // Зависимость: env_logger
+    "env_logger_5" [
+        label="env_logger\n^0.8",
+        fillcolor="lightyellow"
+    ];
+
+    // Связь: reqwest -> env_logger
+    "reqwest_0.11.0" -> "env_logger_5"
+        [label="dev"];
+
+    // Зависимость: futures-core
+    "futures-core_6" [
+        label="futures-core\n^0.3.0",
+        fillcolor="lightgreen"
+    ];
+
+    // Связь: reqwest -> futures-core
+    "reqwest_0.11.0" -> "futures-core_6"
+        [label="normal"];
+
+    // Зависимость: futures-util
+    "futures-util_7" [
+        label="futures-util\n^0.3.0",
+        fillcolor="lightgreen"
+    ];
+
+    // Связь: reqwest -> futures-util
+    "reqwest_0.11.0" -> "futures-util_7"
+        [label="normal"];
+
+    // Зависимость: http
+    "http_8" [
+        label="http\n^0.2",
+        fillcolor="lightgreen"
+    ];
+
+    // Связь: reqwest -> http
+    "reqwest_0.11.0" -> "http_8"
+        [label="normal"];
+
+    // Зависимость: http-body
+    "http-body_9" [
+        label="http-body\n^0.4.0",
+        fillcolor="lightgreen"
+    ];
+
+    // Связь: reqwest -> http-body
+    "reqwest_0.11.0" -> "http-body_9"
+        [label="normal"];
+
+    // Зависимость: hyper
+    "hyper_10" [
+        label="hyper\n^0.14",
+        fillcolor="lightyellow"
+    ];
+
+    // Связь: reqwest -> hyper
+    "reqwest_0.11.0" -> "hyper_10"
+        [label="dev"];
+
+    // Зависимость: hyper
+    "hyper_11" [
+        label="hyper\n^0.14",
+        fillcolor="lightgreen"
+    ];
+
+    // Связь: reqwest -> hyper
+    "reqwest_0.11.0" -> "hyper_11"
+        [label="normal"];
+
+    // Зависимость: ipnet
+    "ipnet_12" [
+        label="ipnet\n^2.3",
+        fillcolor="lightgreen"
+    ];
+
+    // Связь: reqwest -> ipnet
+    "reqwest_0.11.0" -> "ipnet_12"
+        [label="normal"];
+
+    // Зависимость: js-sys
+    "js-sys_13" [
+        label="js-sys\n^0.3.45",
+        fillcolor="lightgreen"
+    ];
+
+    // Связь: reqwest -> js-sys
+    "reqwest_0.11.0" -> "js-sys_13"
+        [label="normal"];
+
+    // Зависимость: lazy_static
+    "lazy_static_14" [
+        label="lazy_static\n^1.4",
+        fillcolor="lightgreen"
+    ];
+
+    // Связь: reqwest -> lazy_static
+    "reqwest_0.11.0" -> "lazy_static_14"
+        [label="normal"];
+
+    // Зависимость: libflate
+    "libflate_15" [
+        label="libflate\n^1.0",
+        fillcolor="lightyellow"
+    ];
+
+    // Связь: reqwest -> libflate
+    "reqwest_0.11.0" -> "libflate_15"
+        [label="dev"];
+
+    // Зависимость: log
+    "log_16" [
+        label="log\n^0.4",
+        fillcolor="lightgreen"
+    ];
+
+    // Связь: reqwest -> log
+    "reqwest_0.11.0" -> "log_16"
+        [label="normal"];
+
+    // Зависимость: mime
+    "mime_17" [
+        label="mime\n^0.3.7",
+        fillcolor="lightgreen"
+    ];
+
+    // Связь: reqwest -> mime
+    "reqwest_0.11.0" -> "mime_17"
+        [label="normal"];
+
+    // Зависимость: percent-encoding
+    "percent-encoding_18" [
+        label="percent-encoding\n^2.1",
+        fillcolor="lightgreen"
+    ];
+
+    // Связь: reqwest -> percent-encoding
+    "reqwest_0.11.0" -> "percent-encoding_18"
+        [label="normal"];
+
+    // Зависимость: pin-project-lite
+    "pin-project-lite_19" [
+        label="pin-project-lite\n^0.2.0",
+        fillcolor="lightgreen"
+    ];
+
+    // Связь: reqwest -> pin-project-lite
+    "reqwest_0.11.0" -> "pin-project-lite_19"
+        [label="normal"];
+
+    // Зависимость: serde
+    "serde_20" [
+        label="serde\n^1.0",
+        fillcolor="lightgreen"
+    ];
+
+    // Связь: reqwest -> serde
+    "reqwest_0.11.0" -> "serde_20"
+        [label="normal"];
+
+    // Зависимость: serde
+    "serde_21" [
+        label="serde\n^1.0",
+        fillcolor="lightyellow"
+    ];
+
+    // Связь: reqwest -> serde
+    "reqwest_0.11.0" -> "serde_21"
+        [label="dev"];
+
+    // Зависимость: serde_urlencoded
+    "serde_urlencoded_22" [
+        label="serde_urlencoded\n^0.7",
+        fillcolor="lightgreen"
+    ];
+
+    // Связь: reqwest -> serde_urlencoded
+    "reqwest_0.11.0" -> "serde_urlencoded_22"
+        [label="normal"];
+
+    // Зависимость: tokio
+    "tokio_23" [
+        label="tokio\n^1.0",
+        fillcolor="lightyellow"
+    ];
+
+    // Связь: reqwest -> tokio
+    "reqwest_0.11.0" -> "tokio_23"
+        [label="dev"];
+
+    // Зависимость: tokio
+    "tokio_24" [
+        label="tokio\n^1.0",
+        fillcolor="lightgreen"
+    ];
+
+    // Связь: reqwest -> tokio
+    "reqwest_0.11.0" -> "tokio_24"
+        [label="normal"];
+
+    // Зависимость: url
+    "url_25" [
+        label="url\n^2.2",
+        fillcolor="lightgreen"
+    ];
+
+    // Связь: reqwest -> url
+    "reqwest_0.11.0" -> "url_25"
+        [label="normal"];
+
+    // Зависимость: wasm-bindgen
+    "wasm-bindgen_26" [
+        label="wasm-bindgen\n^0.2.68",
+        fillcolor="lightgreen"
+    ];
+
+    // Связь: reqwest -> wasm-bindgen
+    "reqwest_0.11.0" -> "wasm-bindgen_26"
+        [label="normal"];
+
+    // Зависимость: wasm-bindgen-futures
+    "wasm-bindgen-futures_27" [
+        label="wasm-bindgen-futures\n^0.4.18",
+        fillcolor="lightgreen"
+    ];
+
+    // Связь: reqwest -> wasm-bindgen-futures
+    "reqwest_0.11.0" -> "wasm-bindgen-futures_27"
+        [label="normal"];
+
+    // Зависимость: wasm-bindgen-test
+    "wasm-bindgen-test_28" [
+        label="wasm-bindgen-test\n^0.3",
+        fillcolor="lightyellow"
+    ];
+
+    // Связь: reqwest -> wasm-bindgen-test
+    "reqwest_0.11.0" -> "wasm-bindgen-test_28"
+        [label="dev"];
+
+    // Зависимость: web-sys
+    "web-sys_29" [
+        label="web-sys\n^0.3.25",
+        fillcolor="lightgreen"
+    ];
+
+    // Связь: reqwest -> web-sys
+    "reqwest_0.11.0" -> "web-sys_29"
+        [label="normal"];
+
+    // Зависимость: winreg
+    "winreg_30" [
+        label="winreg\n^0.7",
+        fillcolor="lightgreen"
+    ];
+
+    // Связь: reqwest -> winreg
+    "reqwest_0.11.0" -> "winreg_30"
+        [label="normal"];
+
+    // Зависимость: async-compression
+    "async-compression_31" [
+        label="async-compression\n^0.3.7",
+        fillcolor="lightgreen", style=dashed
+    ];
+
+    // Связь: reqwest -> async-compression
+    "reqwest_0.11.0" -> "async-compression_31"
+        [label="normal"];
+
+    // Зависимость: cookie
+    "cookie_32" [
+        label="cookie\n^0.14",
+        fillcolor="lightgreen", style=dashed
+    ];
+
+    // Связь: reqwest -> cookie
+    "reqwest_0.11.0" -> "cookie_32"
+        [label="normal"];
+
+    // Зависимость: cookie_store
+    "cookie_store_33" [
+        label="cookie_store\n^0.12",
+        fillcolor="lightgreen", style=dashed
+    ];
+
+    // Связь: reqwest -> cookie_store
+    "reqwest_0.11.0" -> "cookie_store_33"
+        [label="normal"];
+
+    // Зависимость: hyper-rustls
+    "hyper-rustls_34" [
+        label="hyper-rustls\n^0.22.1",
+        fillcolor="lightgreen", style=dashed
+    ];
+
+    // Связь: reqwest -> hyper-rustls
+    "reqwest_0.11.0" -> "hyper-rustls_34"
+        [label="normal"];
+
+    // Зависимость: hyper-tls
+    "hyper-tls_35" [
+        label="hyper-tls\n^0.5",
+        fillcolor="lightgreen", style=dashed
+    ];
+
+    // Связь: reqwest -> hyper-tls
+    "reqwest_0.11.0" -> "hyper-tls_35"
+        [label="normal"];
+
+    // Зависимость: mime_guess
+    "mime_guess_36" [
+        label="mime_guess\n^2.0",
+        fillcolor="lightgreen", style=dashed
+    ];
+
+    // Связь: reqwest -> mime_guess
+    "reqwest_0.11.0" -> "mime_guess_36"
+        [label="normal"];
+
+    // Зависимость: native-tls
+    "native-tls_37" [
+        label="native-tls\n^0.2",
+        fillcolor="lightgreen", style=dashed
+    ];
+
+    // Связь: reqwest -> native-tls
+    "reqwest_0.11.0" -> "native-tls_37"
+        [label="normal"];
+
+    // Зависимость: rustls
+    "rustls_38" [
+        label="rustls\n^0.19",
+        fillcolor="lightgreen", style=dashed
+    ];
+
+    // Связь: reqwest -> rustls
+    "reqwest_0.11.0" -> "rustls_38"
+        [label="normal"];
+
+    // Зависимость: rustls-native-certs
+    "rustls-native-certs_39" [
+        label="rustls-native-certs\n^0.5",
+        fillcolor="lightgreen", style=dashed
+    ];
+
+    // Связь: reqwest -> rustls-native-certs
+    "reqwest_0.11.0" -> "rustls-native-certs_39"
+        [label="normal"];
+
+    // Зависимость: serde_json
+    "serde_json_40" [
+        label="serde_json\n^1.0",
+        fillcolor="lightgreen", style=dashed
+    ];
+
+    // Связь: reqwest -> serde_json
+    "reqwest_0.11.0" -> "serde_json_40"
+        [label="normal"];
+
+    // Зависимость: time
+    "time_41" [
+        label="time\n^0.2.11",
+        fillcolor="lightgreen", style=dashed
+    ];
+
+    // Связь: reqwest -> time
+    "reqwest_0.11.0" -> "time_41"
+        [label="normal"];
+
+    // Зависимость: tokio-native-tls
+    "tokio-native-tls_42" [
+        label="tokio-native-tls\n^0.3.0",
+        fillcolor="lightgreen", style=dashed
+    ];
+
+    // Связь: reqwest -> tokio-native-tls
+    "reqwest_0.11.0" -> "tokio-native-tls_42"
+        [label="normal"];
+
+    // Зависимость: tokio-rustls
+    "tokio-rustls_43" [
+        label="tokio-rustls\n^0.22",
+        fillcolor="lightgreen", style=dashed
+    ];
+
+    // Связь: reqwest -> tokio-rustls
+    "reqwest_0.11.0" -> "tokio-rustls_43"
+        [label="normal"];
+
+    // Зависимость: tokio-socks
+    "tokio-socks_44" [
+        label="tokio-socks\n^0.5",
+        fillcolor="lightgreen", style=dashed
+    ];
+
+    // Связь: reqwest -> tokio-socks
+    "reqwest_0.11.0" -> "tokio-socks_44"
+        [label="normal"];
+
+    // Зависимость: tokio-util
+    "tokio-util_45" [
+        label="tokio-util\n^0.6.0",
+        fillcolor="lightgreen", style=dashed
+    ];
+
+    // Связь: reqwest -> tokio-util
+    "reqwest_0.11.0" -> "tokio-util_45"
+        [label="normal"];
+
+    // Зависимость: trust-dns-resolver
+    "trust-dns-resolver_46" [
+        label="trust-dns-resolver\n^0.20",
+        fillcolor="lightgreen", style=dashed
+    ];
+
+    // Связь: reqwest -> trust-dns-resolver
+    "reqwest_0.11.0" -> "trust-dns-resolver_46"
+        [label="normal"];
+
+    // Зависимость: webpki-roots
+    "webpki-roots_47" [
+        label="webpki-roots\n^0.21",
+        fillcolor="lightgreen", style=dashed
+    ];
+
+    // Связь: reqwest -> webpki-roots
+    "reqwest_0.11.0" -> "webpki-roots_47"
+        [label="normal"];
+
+}

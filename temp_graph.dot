@@ -1,0 +1,55 @@
+digraph dependencies {
+    rankdir=TB;
+    node [shape=box, style=filled, fillcolor=lightblue];
+    edge [color=darkgreen];
+    graph [bgcolor=white];
+
+    // Центральный узел - основной пакет
+    "reqwest_1.0.0" [
+        label="reqwest\n1.0.0",
+        fillcolor=lightcoral,
+        fontsize=16,
+        shape=ellipse
+    ];
+
+    // Зависимость: hyper
+    "hyper_0" [
+        label="hyper\n0.14",
+        fillcolor="lightgreen"
+    ];
+
+    // Связь: reqwest -> hyper
+    "reqwest_1.0.0" -> "hyper_0"
+        [label="normal"];
+
+    // Зависимость: tokio
+    "tokio_1" [
+        label="tokio\n1.0",
+        fillcolor="lightgreen"
+    ];
+
+    // Связь: reqwest -> tokio
+    "reqwest_1.0.0" -> "tokio_1"
+        [label="normal"];
+
+    // Зависимость: serde_json
+    "serde_json_2" [
+        label="serde_json\n1.0",
+        fillcolor="lightgreen", style=dashed
+    ];
+
+    // Связь: reqwest -> serde_json
+    "reqwest_1.0.0" -> "serde_json_2"
+        [label="normal"];
+
+    // Зависимость: log
+    "log_3" [
+        label="log\n0.4",
+        fillcolor="lightyellow"
+    ];
+
+    // Связь: reqwest -> log
+    "reqwest_1.0.0" -> "log_3"
+        [label="dev"];
+
+}

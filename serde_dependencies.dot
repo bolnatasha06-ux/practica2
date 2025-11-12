@@ -1,0 +1,45 @@
+digraph dependencies {
+    rankdir=TB;
+    node [shape=box, style=filled, fillcolor=lightblue];
+    edge [color=darkgreen];
+    graph [bgcolor=white];
+
+    // Центральный узел - основной пакет
+    "serde_1.0.200" [
+        label="serde\n1.0.200",
+        fillcolor=lightcoral,
+        fontsize=16,
+        shape=ellipse
+    ];
+
+    // Зависимость: serde_derive
+    "serde_derive_0" [
+        label="serde_derive\n^1",
+        fillcolor="lightyellow"
+    ];
+
+    // Связь: serde -> serde_derive
+    "serde_1.0.200" -> "serde_derive_0"
+        [label="dev"];
+
+    // Зависимость: serde_derive
+    "serde_derive_1" [
+        label="serde_derive\n=1.0.200",
+        fillcolor="lightgreen"
+    ];
+
+    // Связь: serde -> serde_derive
+    "serde_1.0.200" -> "serde_derive_1"
+        [label="normal"];
+
+    // Зависимость: serde_derive
+    "serde_derive_2" [
+        label="serde_derive\n^1",
+        fillcolor="lightgreen", style=dashed
+    ];
+
+    // Связь: serde -> serde_derive
+    "serde_1.0.200" -> "serde_derive_2"
+        [label="normal"];
+
+}

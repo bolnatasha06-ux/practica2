@@ -1,0 +1,215 @@
+digraph dependencies {
+    rankdir=TB;
+    node [shape=box, style=filled, fillcolor=lightblue];
+    edge [color=darkgreen];
+    graph [bgcolor=white];
+
+    // Центральный узел - основной пакет
+    "tokio_1.0.0" [
+        label="tokio\n1.0.0",
+        fillcolor=lightcoral,
+        fontsize=16,
+        shape=ellipse
+    ];
+
+    // Зависимость: async-stream
+    "async-stream_0" [
+        label="async-stream\n^0.3",
+        fillcolor="lightyellow"
+    ];
+
+    // Связь: tokio -> async-stream
+    "tokio_1.0.0" -> "async-stream_0"
+        [label="dev"];
+
+    // Зависимость: autocfg
+    "autocfg_1" [
+        label="autocfg\n^1",
+        fillcolor="lightgreen"
+    ];
+
+    // Связь: tokio -> autocfg
+    "tokio_1.0.0" -> "autocfg_1"
+        [label="build"];
+
+    // Зависимость: futures
+    "futures_2" [
+        label="futures\n^0.3.0",
+        fillcolor="lightyellow"
+    ];
+
+    // Связь: tokio -> futures
+    "tokio_1.0.0" -> "futures_2"
+        [label="dev"];
+
+    // Зависимость: libc
+    "libc_3" [
+        label="libc\n^0.2.42",
+        fillcolor="lightyellow"
+    ];
+
+    // Связь: tokio -> libc
+    "tokio_1.0.0" -> "libc_3"
+        [label="dev"];
+
+    // Зависимость: loom
+    "loom_4" [
+        label="loom\n^0.4",
+        fillcolor="lightyellow"
+    ];
+
+    // Связь: tokio -> loom
+    "tokio_1.0.0" -> "loom_4"
+        [label="dev"];
+
+    // Зависимость: nix
+    "nix_5" [
+        label="nix\n^0.19.0",
+        fillcolor="lightyellow"
+    ];
+
+    // Связь: tokio -> nix
+    "tokio_1.0.0" -> "nix_5"
+        [label="dev"];
+
+    // Зависимость: pin-project-lite
+    "pin-project-lite_6" [
+        label="pin-project-lite\n^0.2.0",
+        fillcolor="lightgreen"
+    ];
+
+    // Связь: tokio -> pin-project-lite
+    "tokio_1.0.0" -> "pin-project-lite_6"
+        [label="normal"];
+
+    // Зависимость: proptest
+    "proptest_7" [
+        label="proptest\n^0.10.0",
+        fillcolor="lightyellow"
+    ];
+
+    // Связь: tokio -> proptest
+    "tokio_1.0.0" -> "proptest_7"
+        [label="dev"];
+
+    // Зависимость: tempfile
+    "tempfile_8" [
+        label="tempfile\n^3.1.0",
+        fillcolor="lightyellow"
+    ];
+
+    // Связь: tokio -> tempfile
+    "tokio_1.0.0" -> "tempfile_8"
+        [label="dev"];
+
+    // Зависимость: bytes
+    "bytes_9" [
+        label="bytes\n^1.0.0",
+        fillcolor="lightgreen", style=dashed
+    ];
+
+    // Связь: tokio -> bytes
+    "tokio_1.0.0" -> "bytes_9"
+        [label="normal"];
+
+    // Зависимость: libc
+    "libc_10" [
+        label="libc\n^0.2.42",
+        fillcolor="lightgreen", style=dashed
+    ];
+
+    // Связь: tokio -> libc
+    "tokio_1.0.0" -> "libc_10"
+        [label="normal"];
+
+    // Зависимость: memchr
+    "memchr_11" [
+        label="memchr\n^2.2",
+        fillcolor="lightgreen", style=dashed
+    ];
+
+    // Связь: tokio -> memchr
+    "tokio_1.0.0" -> "memchr_11"
+        [label="normal"];
+
+    // Зависимость: mio
+    "mio_12" [
+        label="mio\n^0.7.6",
+        fillcolor="lightgreen", style=dashed
+    ];
+
+    // Связь: tokio -> mio
+    "tokio_1.0.0" -> "mio_12"
+        [label="normal"];
+
+    // Зависимость: num_cpus
+    "num_cpus_13" [
+        label="num_cpus\n^1.8.0",
+        fillcolor="lightgreen", style=dashed
+    ];
+
+    // Связь: tokio -> num_cpus
+    "tokio_1.0.0" -> "num_cpus_13"
+        [label="normal"];
+
+    // Зависимость: once_cell
+    "once_cell_14" [
+        label="once_cell\n^1.5.2",
+        fillcolor="lightgreen", style=dashed
+    ];
+
+    // Связь: tokio -> once_cell
+    "tokio_1.0.0" -> "once_cell_14"
+        [label="normal"];
+
+    // Зависимость: parking_lot
+    "parking_lot_15" [
+        label="parking_lot\n^0.11.0",
+        fillcolor="lightgreen", style=dashed
+    ];
+
+    // Связь: tokio -> parking_lot
+    "tokio_1.0.0" -> "parking_lot_15"
+        [label="normal"];
+
+    // Зависимость: signal-hook-registry
+    "signal-hook-registry_16" [
+        label="signal-hook-registry\n^1.1.1",
+        fillcolor="lightgreen", style=dashed
+    ];
+
+    // Связь: tokio -> signal-hook-registry
+    "tokio_1.0.0" -> "signal-hook-registry_16"
+        [label="normal"];
+
+    // Зависимость: tokio-macros
+    "tokio-macros_17" [
+        label="tokio-macros\n^1.0.0",
+        fillcolor="lightgreen", style=dashed
+    ];
+
+    // Связь: tokio -> tokio-macros
+    "tokio_1.0.0" -> "tokio-macros_17"
+        [label="normal"];
+
+    // Зависимость: tracing
+    "tracing_18" [
+        label="tracing\n^0.1.21",
+        fillcolor="lightgreen", style=dashed
+    ];
+
+    // Связь: tokio -> tracing
+    "tokio_1.0.0" -> "tracing_18"
+        [label="normal"];
+
+    // Зависимость: winapi
+    "winapi_19" [
+        label="winapi\n^0.3.8",
+        fillcolor="lightgreen", style=dashed
+    ];
+
+    // Связь: tokio -> winapi
+    "tokio_1.0.0" -> "winapi_19"
+        [label="normal"];
+
+}
