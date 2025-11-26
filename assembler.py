@@ -74,11 +74,10 @@ class VMAssembler:
             
         return bytes_result
     
-    def assemble(self, source_file: str, output_file: str, test_mode: bool = False):
+    def assemble_to_binary(self, source_file: str, output_file: str, test_mode: bool = False):
         """
-        Основной метод ассемблирования
+        Ассемблирование в бинарный формат
         """
-        # Чтение исходного файла
         with open(source_file, 'r', encoding='utf-8') as f:
             program_data = json.load(f)
         
@@ -86,12 +85,10 @@ class VMAssembler:
         binary_output = []
         internal_representation = []
         
-        # Ассемблирование каждой инструкции
         for i, instr in enumerate(instructions):
             bytes_result = self.parse_instruction(instr)
             binary_output.extend(bytes_result)
             
-            # Формируем внутреннее представление для тестового режима
             if test_mode:
                 op = instr.get("op", "")
                 if op == "LOAD_CONST":
@@ -123,11 +120,9 @@ class VMAssembler:
                         'B': instr["address"]
                     })
         
-        # Запись бинарного файла
         with open(output_file, 'wb') as f:
             f.write(bytes(binary_output))
         
-        # Вывод в тестовом режиме
         if test_mode:
             print("=== ВНУТРЕННЕЕ ПРЕДСТАВЛЕНИЕ ПРОГРАММЫ ===")
             for ir in internal_representation:
@@ -142,3 +137,38 @@ class VMAssembler:
             print(f"Бинарный вывод: {[f'0x{b:02X}' for b in binary_output]}")
         
         return binary_output, internal_representation
+
+    def assemble_to_intermediate(self, source_file: str, output_file: str):
+        """
+        Ассемблирование в промежуточное представление для интерпретатора
+        """
+        with open(source_file, 'r', encoding='utf-8') as f:
+            program_data = json.load(f)
+        
+        instructions = program_data.get("instructions", [])
+        intermediate_repr = []
+        
+        for i, instr in enumerate(instructions):
+            op = instr.get("op", "").upper()
+            intermediate_instr = {"op": op}
+            
+            if op == "LOAD_CONST":
+                intermediate_instr["value"] = instr["value"]
+            elif op in ["WRITE_MEM", "BINARY_OP"]:
+                intermediate_instr["address"] = instr["address"]
+            elif op == "READ_MEM":
+                pass  # Нет дополнительных параметров
+                
+            intermediate_repr.append(intermediate_instr)
+        
+        # Сохраняем промежуточное представление
+        with open(output_file, 'w', encoding='utf-8') as f:
+            json.dump({
+                "program": intermediate_repr,
+                "metadata": {
+                    "instruction_count": len(intermediate_repr),
+                    "source_file": source_file
+                }
+            }, f, indent=2, ensure_ascii=False)
+        
+        return intermediate_repr
